@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include 'db_connect.php';
 
 $id = $_GET['id'];
 $data = mysqli_query($conn, "SELECT * FROM dosen WHERE iddosen='$id'");
@@ -39,3 +39,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <button type="submit">Update</button>
 </form>
+
