@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include 'db_connect.php';
 
 $id = $_GET['id'];
 
@@ -12,3 +12,4 @@ if ($result) {
     echo "Gagal menghapus data: " . mysqli_error($conn);
 }
 ?>
+
