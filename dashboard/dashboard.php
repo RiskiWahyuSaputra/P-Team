@@ -31,15 +31,12 @@ while($row = mysqli_fetch_assoc($result)) {
     <p>Total Mahasiswa: <?= $totalMahasiswa; ?></p>
     <p>Total Pembayaran: Rp <?= number_format($totalPembayaran, 0, ',', '.'); ?></p>
     
-    <a href="TambahPembayaran.php">Tambah Pembayaran</a>
-    
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>ID Mahasiswa</th>
             <th>Nama Mahasiswa</th>
             <th>Status Pembayaran</th>
             <th>Jumlah (Rp)</th>
-            <th>Aksi</th>
         </tr>
         <?php foreach($dataMahasiswa as $row) { ?>
         <tr>
@@ -47,10 +44,6 @@ while($row = mysqli_fetch_assoc($result)) {
             <td><?= $row['nama']; ?></td>
             <td><?= $row['status'] ?? 'Belum Bayar'; ?></td>
             <td><?= number_format($row['jumlah'] ?? 0, 0, ',', '.'); ?></td>
-            <td>
-                <a href="EditPembayaran.php?id=<?= $row['id_mahasiswa']; ?>">Edit</a> |
-                <a href="HapusPembayaran.php?id=<?= $row['id_mahasiswa']; ?>" onclick="return confirm('Yakin hapus data?')">Hapus</a>
-            </td>
         </tr>
         <?php } ?>
     </table>
